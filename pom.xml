@@ -35,12 +35,27 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>6.0.14.Final</version>
         </dependency>
-    </dependencies>
+
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.25.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-agroal</artifactId>
+			<version>5.4.18.Final</version>
+			<type>pom</type>
+		</dependency>
+
+	</dependencies>
 
 	<build>
 		<plugins>
