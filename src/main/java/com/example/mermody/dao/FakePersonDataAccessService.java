@@ -1,7 +1,6 @@
 package com.example.mermody.dao;
 
 import com.example.mermody.model.Person;
-import org.springframework.objenesis.instantiator.annotations.Instantiator;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

@@ -1,11 +1,14 @@
 package com.example.mermody.dao;
 
 import com.example.mermody.model.Person;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Repository("sqllight")
 public class PersonDataAccessService implements PersonDao{
     @Override
     public int isertperson(UUID id, Person person) {
