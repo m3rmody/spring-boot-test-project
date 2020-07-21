@@ -1,6 +1,6 @@
 app:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5432/spring-boot-postgres-db
+    jdbc-url: jdbc:postgresql://localhost:5432/mermodydb
     username: postgres
     password: 058822Dima
     pool-size: 30

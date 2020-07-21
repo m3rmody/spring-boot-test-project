@@ -1,8 +1,9 @@
 package com.example.mermody.dao;
 
 import com.example.mermody.model.Person;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +11,14 @@ import java.util.UUID;
 
 @Repository("postgres")
 public class PersonDataAccessService implements PersonDao{
+
+    private final JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public PersonDataAccessService(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
     @Override
     public int isertperson(UUID id, Person person) {
         return 0;
@@ -17,7 +26,12 @@ public class PersonDataAccessService implements PersonDao{
 
     @Override
     public List<Person> selectAllPeople() {
-        return null;
+        final String sql = "SELECT id, name FROM person";
+        return jdbcTemplate.query(sql, (resultSet, i) -> {
+            UUID id = UUID.fromString(resultSet.getString("id"));
+            String name = resultSet.getString("name");
+            return new Person(id, name);
+        });
     }
 
     @Override
