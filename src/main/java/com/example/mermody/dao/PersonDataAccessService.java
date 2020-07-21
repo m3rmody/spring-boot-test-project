@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Repository("sqllight")
+@Repository("postgres")
 public class PersonDataAccessService implements PersonDao{
     @Override
     public int isertperson(UUID id, Person person) {
